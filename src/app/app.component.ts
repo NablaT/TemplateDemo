@@ -21,4 +21,7 @@ export class AppComponent {
 
   constructor() {}
 
+  showInformation(album:string){
+
+  }
 }

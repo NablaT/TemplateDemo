@@ -1,16 +1,17 @@
 <div>
   <md-toolbar color="primary">
-    <md-icon class="icon-20">home</md-icon>
-    Name of your App
+    <md-icon class="icon-20" (click)="sidenav.open()">menu</md-icon>
+    My Music
   </md-toolbar>
 
   <md-sidenav-layout>
-    <md-sidenav align="start" mode="side" opened>
+    <md-sidenav align="start" mode="side"  #sidenav>
       <md-tab-group>
         <md-tab>
           <template md-tab-label>Description</template>
           <template md-tab-content>
             This is the description
+            <button md-button (click)="sidenav.close()" color="accent">CLOSE</button>
           </template>
         </md-tab>
         <md-tab>
@@ -26,7 +27,7 @@
         <md-grid-tile-footer>
           <h3 md-line>{{dog.name}}</h3>
           <span md-line>Human: {{dog.human}}</span>
-          <button md-icon-button (click)="showDog(dog)">
+          <button md-icon-button (click)="showInformation(dog)">
             <md-icon>info</md-icon>
           </button>
         </md-grid-tile-footer>

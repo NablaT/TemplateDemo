@@ -8,6 +8,18 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+h3{
+  overflow: hidden;
+}
+
+p {
+  margin: 16px;
+}
+
+[md-raised-button] {
+  width: 100%;
+}
+
 .icon-20{
   font-size:20px;
   cursor:pointer;
