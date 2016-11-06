@@ -41,7 +41,7 @@ p {
 }
 
 md-sidenav-layout {
-  height: 100vh;
+  height: 100%;
 }
 
 md-sidenav {
