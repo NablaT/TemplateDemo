@@ -1,0 +1,8 @@
+@import '~@angular/material/core/theming/all-theme';
+
+@include md-core();
+
+
+$menuFontColor:white;
+$colorProfile:rgba(0, 0, 0, 0.4);
+$colorButton:white;

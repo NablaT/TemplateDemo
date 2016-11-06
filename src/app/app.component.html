@@ -1,0 +1,37 @@
+<div>
+  <md-toolbar color="primary">
+    <md-icon class="icon-20">home</md-icon>
+    Name of your App
+  </md-toolbar>
+
+  <md-sidenav-layout>
+    <md-sidenav align="end" mode="side" opened>
+      <md-tab-group>
+        <md-tab>
+          <template md-tab-label>Description</template>
+          <template md-tab-content>
+            This is the description
+          </template>
+        </md-tab>
+        <md-tab>
+          <template md-tab-label>Export</template>
+          <template md-tab-content> We are into export</template>
+        </md-tab>
+      </md-tab-group>
+    </md-sidenav>
+
+    <md-grid-list cols="4" rowHeight="200px">
+      <md-grid-tile *ngFor="let dog of dogs" [rowspan]="dog.rows">
+        <img src="assets/{{dog.name}}.png" alt="photo of {{dog.name}}">
+        <md-grid-tile-footer>
+          <h3 md-line>{{dog.name}}</h3>
+          <span md-line>Human: {{dog.human}}</span>
+          <button md-icon-button (click)="showDog(dog)">
+            <md-icon>info</md-icon>
+          </button>
+        </md-grid-tile-footer>
+      </md-grid-tile>
+    </md-grid-list>
+  </md-sidenav-layout>
+
+</div>
