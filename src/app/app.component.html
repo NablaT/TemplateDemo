@@ -5,7 +5,7 @@
   </md-toolbar>
 
   <md-sidenav-layout>
-    <md-sidenav align="end" mode="side" opened>
+    <md-sidenav align="start" mode="side" opened>
       <md-tab-group>
         <md-tab>
           <template md-tab-label>Description</template>
@@ -22,7 +22,7 @@
 
     <md-grid-list cols="4" rowHeight="200px">
       <md-grid-tile *ngFor="let dog of dogs" [rowspan]="dog.rows">
-        <img src="assets/{{dog.name}}.png" alt="photo of {{dog.name}}">
+        <img src="assets/album/{{dog.fileName}}.jpg" alt="photo of {{dog.name}}">
         <md-grid-tile-footer>
           <h3 md-line>{{dog.name}}</h3>
           <span md-line>Human: {{dog.human}}</span>
