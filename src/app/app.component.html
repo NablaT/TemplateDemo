@@ -1,33 +1,48 @@
 <div>
   <md-toolbar color="primary">
-    <md-icon class="icon-20" (click)="sidenav.open()">menu</md-icon>
-    My Music
+    <span>
+      <button md-icon-button>
+        <md-icon class="icon-20">home</md-icon>
+      </button>
+      My Music
+    </span>
+    <button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
   </md-toolbar>
-
+  <md-menu x-position="before" #menu="mdMenu">
+    <button md-menu-item>Share</button>
+    <button md-menu-item>Settings</button>
+  </md-menu>
   <md-sidenav-layout>
-    <md-sidenav align="start" mode="side"  #sidenav>
+    <md-sidenav align="start" mode="side" #sidenav>
       <md-tab-group>
         <md-tab>
           <template md-tab-label>Description</template>
           <template md-tab-content>
-            This is the description
-            <button md-button (click)="sidenav.close()" color="accent">CLOSE</button>
+            <p>Title: {{selectedAlbum.name}}</p>
+            <p>Artist: {{selectedAlbum.artist}}</p>
+            <p>Date: {{selectedAlbum.date}}</p>
+            <button md-raised-button button (click)="hideInformation()" color="accent">CLOSE</button>
           </template>
         </md-tab>
         <md-tab>
           <template md-tab-label>Export</template>
-          <template md-tab-content> We are into export</template>
+          <template md-tab-content>
+
+            <button md-raised-button button (click)="hideInformation()" color="accent">CLOSE</button>
+          </template>
         </md-tab>
       </md-tab-group>
     </md-sidenav>
 
     <md-grid-list cols="4" rowHeight="200px">
-      <md-grid-tile *ngFor="let dog of dogs" [rowspan]="dog.rows">
-        <img src="assets/album/{{dog.fileName}}.jpg" alt="photo of {{dog.name}}">
+      <md-grid-tile *ngFor="let album of albums" [rowspan]="album.rows">
+        <img src="assets/album/{{album.fileName}}.jpg" alt="photo of {{album.name}}">
         <md-grid-tile-footer>
-          <h3 md-line>{{dog.name}}</h3>
-          <span md-line>Human: {{dog.human}}</span>
-          <button md-icon-button (click)="showInformation(dog)">
+          <h3 md-line>{{album.name}}</h3>
+          <span md-line>Artist: {{album.artist}}</span>
+          <button md-icon-button (click)="showInformation(album)">
             <md-icon>info</md-icon>
           </button>
         </md-grid-tile-footer>

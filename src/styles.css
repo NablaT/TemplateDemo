@@ -8,6 +8,16 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+md-toolbar-row{
+  justify-content: space-between;
+}
+
+button:focus {outline:0 !important;}
+
+p{
+  margin:16px;
+}
+
 h3{
   overflow: hidden;
 }
